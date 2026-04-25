@@ -138,12 +138,22 @@ if (slides.length > 0) {
 
     // Touch swipe
     let touchStartX = 0;
+    let touchStartY = 0;
     const slider = document.getElementById('slider');
     if (slider) {
-        slider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        slider.style.touchAction = 'pan-y'; // allow vertical scroll
+        slider.addEventListener('touchstart', e => { 
+            touchStartX = e.changedTouches[0].screenX; 
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
         slider.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].screenX;
-            if (Math.abs(diff) > 50) { goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1); resetAutoSlide(); }
+            const diffX = touchStartX - e.changedTouches[0].screenX;
+            const diffY = touchStartY - e.changedTouches[0].screenY;
+            // Only trigger if horizontal swipe is larger than 50px AND larger than vertical swipe
+            if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) { 
+                goToSlide(diffX > 0 ? currentSlide + 1 : currentSlide - 1); 
+                resetAutoSlide(); 
+            }
         }, { passive: true });
     }
 }
