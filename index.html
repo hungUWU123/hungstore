@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HÙNG STORE - Thương hiệu thời trang Việt Nam. Áo, Quần, Phụ kiện chất lượng cao.">
+    <title>HÙNG STORE – Thời Trang Việt Nam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="index.html" class="logo" id="logo">HÙNG STORE</a>
+            <nav class="nav-desktop" id="nav-desktop">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="#">TOP (ÁO) <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+                        <div class="dropdown">
+                            <a href="#">All</a><a href="#">T-shirts & Polo shirts</a><a href="#">Jersey</a><a href="#">Tanks</a>
+                            <a href="#">Long Sleeves</a><a href="#">Shirts</a><a href="#">Jackets</a><a href="#">Hoodies & Zip hoodies</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#">BOTTOMS (QUẦN) <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+                        <div class="dropdown"><a href="#">All</a><a href="#">Shorts</a><a href="#">Pants</a></div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#">ACCESSORIES <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+                        <div class="dropdown"><a href="#">All</a><a href="#">Backpacks</a><a href="#">Bags</a><a href="#">Caps</a><a href="#">Socks</a></div>
+                    </li>
+                    <li class="nav-item"><a href="stores.html">CỬA HÀNG</a></li>
+                    <li class="nav-item"><a href="about.html">GIỚI THIỆU</a></li>
+                    <li class="nav-item"><a href="contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="action-btn search-btn" id="search-btn" aria-label="Tìm kiếm">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+                <button class="action-btn cart-btn" id="cart-btn" aria-label="Giỏ hàng">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-overlay-inner">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." id="search-input" autocomplete="off">
+            <button class="search-close" id="search-close" aria-label="Đóng">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="search-suggestions">
+            <p>Gợi ý:</p><a href="#">QUẦN ÁO</a><a href="#">PHỤ KIỆN</a>
+        </div>
+    </div>
+
+    <!-- MOBILE SIDEBAR -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">HÙNG STORE</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Đóng">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-item">
+                <a href="#" class="sidebar-link" data-toggle="sb-top">TOP (ÁO) <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+                <div class="sidebar-sub" id="sb-top"><a href="#">All</a><a href="#">T-shirts</a><a href="#">Tanks</a><a href="#">Jackets</a><a href="#">Hoodies</a></div>
+            </div>
+            <div class="sidebar-item">
+                <a href="#" class="sidebar-link" data-toggle="sb-bottoms">BOTTOMS (QUẦN) <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+                <div class="sidebar-sub" id="sb-bottoms"><a href="#">All</a><a href="#">Shorts</a><a href="#">Pants</a></div>
+            </div>
+            <div class="sidebar-item"><a href="stores.html" class="sidebar-link">CỬA HÀNG</a></div>
+            <div class="sidebar-item"><a href="about.html" class="sidebar-link">GIỚI THIỆU</a></div>
+            <div class="sidebar-item"><a href="contact.html" class="sidebar-link">LIÊN HỆ</a></div>
+        </nav>
+    </aside>
+
+    <!-- HERO SLIDER -->
+    <section class="hero" id="hero">
+        <div class="slider" id="slider">
+            <div class="slide active" style="background: linear-gradient(135deg, #0f0f0f 0%, #1e1e2f 50%, #0f0f0f 100%);">
+                <div class="slide-content">
+                    <span class="slide-logo">HÙNG STORE</span>
+                    <span class="slide-tag">NEW ARRIVAL 2026</span>
+                    <h2>NEW<br>COLLECTION</h2>
+                    <p>Phong cách thể thao năng động</p>
+                    <a href="#section-ao" class="slide-btn">MUA NGAY</a>
+                </div>
+                <img src="https://cdn.hstatic.net/products/1000281824/god2_d1541690f3094eb5a9b8c0b80088b72a_compact.png" alt="Collection" class="slide-img">
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, #0a0a14 0%, #14142a 50%, #0a0a14 100%);">
+                <div class="slide-content">
+                    <span class="slide-logo">HÙNG STORE</span>
+                    <span class="slide-tag">SUMMER 2026</span>
+                    <h2>TANK TOP<br>& SHORTS</h2>
+                    <p>Thoáng mát – Co giãn 4 chiều</p>
+                    <a href="#section-quan" class="slide-btn">KHÁM PHÁ</a>
+                </div>
+                <img src="https://cdn.hstatic.net/products/1000281824/god2_d1541690f3094eb5a9b8c0b80088b72a_compact.png" alt="Summer" class="slide-img slide-img-right">
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #0d0d0d 100%);">
+                <div class="slide-content">
+                    <span class="slide-logo">HÙNG STORE</span>
+                    <span class="slide-tag">ACCESSORIES</span>
+                    <h2>BALO – TÚI<br>NÓN – VỚ</h2>
+                    <p>Phụ kiện thời trang đẳng cấp</p>
+                    <a href="#section-balo" class="slide-btn">XEM NGAY</a>
+                </div>
+                <img src="https://cdn.hstatic.net/products/1000281824/god2_d1541690f3094eb5a9b8c0b80088b72a_compact.png" alt="Accessories" class="slide-img">
+            </div>
+        </div>
+        <button class="slider-arrow prev" id="slider-prev" aria-label="Trước"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="slider-arrow next" id="slider-next" aria-label="Sau"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="slider-dots" id="slider-dots">
+            <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div class="slider-progress" id="slider-progress"><div class="slider-progress-bar"></div></div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+        <section class="product-section" id="section-ao">
+            <div class="section-header"><h2 class="section-title">Áo</h2><a href="#" class="section-link">Xem tất cả</a></div>
+            <div class="product-grid" id="grid-ao"></div>
+            <a href="#" class="view-more-btn">XEM THÊM SẢN PHẨM <strong>ÁO</strong></a>
+        </section>
+        <section class="product-section" id="section-quan">
+            <div class="section-header"><h2 class="section-title">Quần</h2><a href="#" class="section-link">Xem tất cả</a></div>
+            <div class="product-grid" id="grid-quan"></div>
+            <a href="#" class="view-more-btn">XEM THÊM SẢN PHẨM <strong>QUẦN</strong></a>
+        </section>
+        <section class="product-section" id="section-balo">
+            <div class="section-header"><h2 class="section-title">Balo</h2><a href="#" class="section-link">Xem tất cả</a></div>
+            <div class="product-grid" id="grid-balo"></div>
+            <a href="#" class="view-more-btn">XEM THÊM SẢN PHẨM <strong>BALO</strong></a>
+        </section>
+        <section class="product-section" id="section-tui">
+            <div class="section-header"><h2 class="section-title">Túi xách, Cặp</h2><a href="#" class="section-link">Xem tất cả</a></div>
+            <div class="product-grid" id="grid-tui"></div>
+            <a href="#" class="view-more-btn">XEM THÊM SẢN PHẨM <strong>TÚI XÁCH</strong></a>
+        </section>
+        <section class="product-section" id="section-non">
+            <div class="section-header"><h2 class="section-title">Nón</h2><a href="#" class="section-link">Xem tất cả</a></div>
+            <div class="product-grid" id="grid-non"></div>
+            <a href="#" class="view-more-btn">XEM THÊM SẢN PHẨM <strong>NÓN</strong></a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <a href="tel:0775913335" class="footer-phone">0775913335</a>
+                <p class="footer-address">69 đường D10 P.Tây Thạnh<br>24 Hồ Biểu Chánh P.Phú Nhuận</p>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="footer-col">
+                <h3>Về HÙNG STORE</h3>
+                <p>Hùng Store – Thương hiệu thời trang thể thao Việt Nam, mang đến phong cách năng động và cá tính cho giới trẻ.</p>
+                <p><strong>Địa chỉ:</strong> 67-69 đường D10, Phường Tây Thạnh, TP HCM</p>
+                <p><strong>Zalo:</strong> 0775913335</p>
+                <p><strong>Email:</strong> hungstore@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hỗ trợ khách hàng</h3>
+                <ul>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="stores.html">Hệ thống cửa hàng</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách thanh toán</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Chăm sóc khách hàng</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Nhập email..." id="newsletter-email">
+                    <button id="newsletter-btn">ĐĂNG KÝ</button>
+                </div>
+                <h3 class="follow-title">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+                    <a href="#" class="social-link" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.05a8.28 8.28 0 004.76 1.51V7.11a4.84 4.84 0 01-1-.42z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>Copyright &copy; 2026 <strong>HÙNG STORE</strong></p></div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="floating-btns">
+        <a href="#" class="float-btn fb" aria-label="Messenger"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.434 5.503 3.678 7.2V22l3.455-1.896A10.7 10.7 0 0012 20.486c5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.077 12.456l-2.548-2.718-4.972 2.718 5.47-5.806 2.612 2.718 4.907-2.718-5.469 5.806z"/></svg></a>
+        <a href="#" class="float-btn zalo" aria-label="Zalo"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.57.05-1-.38-1.56-.74-.87-.57-1.36-.93-2.21-1.48-.98-.65-.34-1 .22-1.58.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.2-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg></a>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>Giỏ hàng</h3>
+            <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <div class="cart-drawer-body"><p class="cart-empty">Giỏ hàng của bạn đang trống</p></div>
+        <div class="cart-drawer-footer">
+            <a href="#" class="cart-checkout-btn">Xem giỏ hàng</a>
+            <a href="checkout.html" class="cart-checkout-btn primary">Thanh toán</a>
+        </div>
+    </aside>
+
+    <script src="javascript/app.js"></script>
+</body>
+</html>

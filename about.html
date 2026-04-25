@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu – HÙNG STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header scrolled" id="header">
+        <div class="header-inner">
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <a href="index.html" class="logo">HÙNG STORE</a>
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html#section-ao">TOP (ÁO)</a></li>
+                    <li class="nav-item"><a href="index.html#section-quan">BOTTOMS (QUẦN)</a></li>
+                    <li class="nav-item"><a href="stores.html">CỬA HÀNG</a></li>
+                    <li class="nav-item"><a href="about.html" style="color:#000;border-bottom:2px solid #000;padding-bottom:4px;">GIỚI THIỆU</a></li>
+                    <li class="nav-item"><a href="contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="action-btn cart-btn" id="cart-btn" aria-label="Giỏ hàng">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE SIDEBAR -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">HÙNG STORE</span><button class="sidebar-close" id="sidebar-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-item"><a href="index.html" class="sidebar-link">TRANG CHỦ</a></div>
+            <div class="sidebar-item"><a href="stores.html" class="sidebar-link">CỬA HÀNG</a></div>
+            <div class="sidebar-item"><a href="about.html" class="sidebar-link" style="font-weight:800;">GIỚI THIỆU</a></div>
+            <div class="sidebar-item"><a href="contact.html" class="sidebar-link">LIÊN HỆ</a></div>
+        </nav>
+    </aside>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background: linear-gradient(135deg, #0f0f0f, #1a1a2e);"></div>
+        <div class="page-hero-content">
+            <h1>Về Hùng Store</h1>
+            <p>Thương hiệu thời trang thể thao Việt Nam</p>
+        </div>
+    </section>
+
+    <!-- ABOUT CONTENT -->
+    <main class="page-content">
+        <div class="about-container">
+            <!-- Story -->
+            <section class="about-section">
+                <div class="about-text">
+                    <span class="about-tag">CÂU CHUYỆN</span>
+                    <h2>Hành trình khởi đầu</h2>
+                    <p>Hùng Store được thành lập với niềm đam mê mang đến những sản phẩm thời trang thể thao chất lượng cao, phù hợp với phong cách sống năng động của giới trẻ Việt Nam.</p>
+                    <p>Từ những ngày đầu với chỉ vài sản phẩm đơn giản, Hùng Store đã không ngừng phát triển, mở rộng danh mục sản phẩm và nâng cao chất lượng. Mỗi sản phẩm đều được chọn lọc kỹ lưỡng về chất liệu, thiết kế và độ bền.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://cdn.hstatic.net/products/1000281824/god2_d1541690f3094eb5a9b8c0b80088b72a_compact.png" alt="Story">
+                </div>
+            </section>
+
+            <!-- Values -->
+            <section class="about-values">
+                <h2 class="about-values-title">Giá trị cốt lõi</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>Chất lượng</h3>
+                        <p>Chất liệu cao cấp, đường may tỉ mỉ, bền đẹp theo thời gian.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        </div>
+                        <h3>Khách hàng</h3>
+                        <p>Luôn đặt sự hài lòng của khách hàng lên hàng đầu.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <h3>Uy tín</h3>
+                        <p>Cam kết sản phẩm chính hãng, bảo hành chu đáo.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                        </div>
+                        <h3>Đa dạng</h3>
+                        <p>Hàng ngàn sản phẩm từ áo, quần đến phụ kiện thời trang.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats -->
+            <section class="about-stats">
+                <div class="stat-item"><span class="stat-number" data-target="5000">0</span><span class="stat-label">Sản phẩm</span></div>
+                <div class="stat-item"><span class="stat-number" data-target="20000">0</span><span class="stat-label">Khách hàng</span></div>
+                <div class="stat-item"><span class="stat-number" data-target="2">0</span><span class="stat-label">Chi nhánh</span></div>
+                <div class="stat-item"><span class="stat-number" data-target="99">0</span><span class="stat-label">% Hài lòng</span></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bottom"><p>Copyright &copy; 2026 <strong>HÙNG STORE</strong></p></div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header"><h3>Giỏ hàng</h3><button class="cart-drawer-close" id="cart-drawer-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <div class="cart-drawer-body"><p class="cart-empty">Giỏ hàng trống</p></div>
+        <div class="cart-drawer-footer"><a href="checkout.html" class="cart-checkout-btn primary">Thanh toán</a></div>
+    </aside>
+
+    <script src="javascript/app.js"></script>
+    <script>
+        // Counter animation
+        function animateCounters() {
+            document.querySelectorAll('.stat-number').forEach(el => {
+                const target = parseInt(el.dataset.target);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    el.textContent = Math.floor(current).toLocaleString('vi-VN');
+                    if (el.parentElement.querySelector('.stat-label').textContent.includes('%')) {
+                        el.textContent = Math.floor(current) + '%';
+                    }
+                }, 16);
+            });
+        }
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { animateCounters(); obs.disconnect(); } });
+        });
+        obs.observe(document.querySelector('.about-stats'));
+    </script>
+</body>
+</html>

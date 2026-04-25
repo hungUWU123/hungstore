@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi tiết sản phẩm - HÙNG STORE">
+    <title>Chi tiết sản phẩm – HÙNG STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <a href="index.html" class="logo">HÙNG STORE</a>
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="index.html#section-ao">TOP (ÁO) <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+                        <div class="dropdown"><a href="#">All</a><a href="#">T-shirts</a><a href="#">Tanks</a><a href="#">Jackets</a><a href="#">Hoodies</a></div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="index.html#section-quan">BOTTOMS (QUẦN) <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+                        <div class="dropdown"><a href="#">All</a><a href="#">Shorts</a><a href="#">Pants</a></div>
+                    </li>
+                    <li class="nav-item"><a href="stores.html">CỬA HÀNG</a></li>
+                    <li class="nav-item"><a href="about.html">GIỚI THIỆU</a></li>
+                    <li class="nav-item"><a href="contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="action-btn" onclick="window.location='index.html'" aria-label="Trang chủ"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></button>
+                <button class="action-btn cart-btn" id="cart-btn" aria-label="Giỏ hàng">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE SIDEBAR -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">HÙNG STORE</span><button class="sidebar-close" id="sidebar-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-item"><a href="index.html" class="sidebar-link">TRANG CHỦ</a></div>
+            <div class="sidebar-item"><a href="index.html#section-ao" class="sidebar-link">ÁO</a></div>
+            <div class="sidebar-item"><a href="index.html#section-quan" class="sidebar-link">QUẦN</a></div>
+            <div class="sidebar-item"><a href="stores.html" class="sidebar-link">CỬA HÀNG</a></div>
+            <div class="sidebar-item"><a href="about.html" class="sidebar-link">GIỚI THIỆU</a></div>
+            <div class="sidebar-item"><a href="contact.html" class="sidebar-link">LIÊN HỆ</a></div>
+        </nav>
+    </aside>
+
+    <!-- PRODUCT DETAIL -->
+    <main class="pd-page" id="pd-page">
+        <div class="pd-body">
+            <!-- LEFT: Gallery -->
+            <div class="pd-gallery">
+                <div class="pd-main-img-wrap">
+                    <img src="" alt="" class="pd-main-img" id="pd-main-img">
+                    <span class="pd-badge-detail" id="pd-badge-detail"></span>
+                    <button class="pd-zoom-btn" id="pd-zoom-btn" aria-label="Phóng to"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></button>
+                </div>
+                <div class="pd-thumbs" id="pd-thumbs"></div>
+            </div>
+            <!-- RIGHT: Info -->
+            <div class="pd-info">
+                <nav class="pd-breadcrumb" id="pd-breadcrumb">
+                    <a href="index.html">Trang chủ</a> <span>/</span> <a href="#" id="pd-bc-cat">Áo</a> <span>/</span> <span id="pd-bc-name">...</span>
+                </nav>
+                <h1 class="pd-title" id="pd-title">Đang tải...</h1>
+                <div class="pd-rating">
+                    <div class="pd-stars">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f39c12"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f39c12"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f39c12"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f39c12"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#ddd"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                    </div>
+                    <span class="pd-review-count">(12 đánh giá)</span>
+                </div>
+                <div class="pd-prices-detail">
+                    <span class="pd-price-new" id="pd-price-new"></span>
+                    <span class="pd-price-old-detail" id="pd-price-old-detail"></span>
+                    <span class="pd-discount" id="pd-discount"></span>
+                </div>
+                <div class="pd-meta">
+                    <p>SKU: <span id="pd-sku">---</span></p>
+                    <p>Tình trạng: <span class="pd-stock-status">Còn hàng</span></p>
+                </div>
+                <!-- Color -->
+                <div class="pd-option-group">
+                    <label class="pd-option-label">Màu sắc: <strong id="pd-color-name">Đen</strong></label>
+                    <div class="pd-colors" id="pd-colors">
+                        <button class="pd-color-btn active" data-color="Đen" style="background:#1a1a1a" aria-label="Đen"></button>
+                        <button class="pd-color-btn" data-color="Trắng" style="background:#fff;border:2px solid #ddd" aria-label="Trắng"></button>
+                        <button class="pd-color-btn" data-color="Xám" style="background:#888" aria-label="Xám"></button>
+                        <button class="pd-color-btn" data-color="Navy" style="background:#1a3a5c" aria-label="Navy"></button>
+                        <button class="pd-color-btn" data-color="Xanh rêu" style="background:#4a6741" aria-label="Xanh rêu"></button>
+                    </div>
+                </div>
+                <!-- Size -->
+                <div class="pd-option-group">
+                    <label class="pd-option-label">Kích thước: <strong id="pd-size-name">M</strong></label>
+                    <div class="pd-sizes" id="pd-sizes">
+                        <button class="pd-size-btn" data-size="S">S</button>
+                        <button class="pd-size-btn active" data-size="M">M</button>
+                        <button class="pd-size-btn" data-size="L">L</button>
+                        <button class="pd-size-btn" data-size="XL">XL</button>
+                        <button class="pd-size-btn" data-size="XXL">XXL</button>
+                    </div>
+                    <button class="pd-size-guide-btn" id="pd-size-guide-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 3H3v18h18V3z"/><path d="M3 9h4m-4 6h4M9 3v4m6-4v4"/></svg> Hướng dẫn chọn size</button>
+                </div>
+                <!-- Quantity -->
+                <div class="pd-option-group">
+                    <label class="pd-option-label">Số lượng:</label>
+                    <div class="pd-qty">
+                        <button class="pd-qty-btn" id="pd-qty-minus">−</button>
+                        <input type="number" value="1" min="1" max="99" class="pd-qty-input" id="pd-qty-input">
+                        <button class="pd-qty-btn" id="pd-qty-plus">+</button>
+                    </div>
+                </div>
+                <!-- Actions -->
+                <div class="pd-actions">
+                    <button class="pd-add-cart" id="pd-add-cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg> THÊM VÀO GIỎ HÀNG</button>
+                    <button class="pd-buy-now" id="pd-buy-now">MUA NGAY</button>
+                </div>
+                <!-- Promos -->
+                <div class="pd-promos">
+                    <div class="pd-promo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Miễn phí vận chuyển đơn từ 500K</div>
+                    <div class="pd-promo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Đổi trả miễn phí trong 7 ngày</div>
+                    <div class="pd-promo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Bảo hành 6 tháng</div>
+                </div>
+                <!-- Tabs -->
+                <div class="pd-tabs">
+                    <div class="pd-tab-btns">
+                        <button class="pd-tab-btn active" data-tab="desc">Mô tả</button>
+                        <button class="pd-tab-btn" data-tab="material">Chất liệu</button>
+                        <button class="pd-tab-btn" data-tab="care">Bảo quản</button>
+                    </div>
+                    <div class="pd-tab-content active" id="tab-desc"><p id="pd-desc-text">Sản phẩm được thiết kế bởi Hùng Store, mang phong cách thể thao năng động. Chất liệu cao cấp, thoáng mát, co giãn 4 chiều.</p></div>
+                    <div class="pd-tab-content" id="tab-material"><ul><li>Cotton 4 chiều cao cấp</li><li>95% Cotton, 5% Spandex</li><li>Vải mềm mịn, co giãn tốt</li><li>Thấm hút mồ hôi nhanh</li></ul></div>
+                    <div class="pd-tab-content" id="tab-care"><ul><li>Giặt máy ở nhiệt độ thường</li><li>Không dùng chất tẩy mạnh</li><li>Phơi trong bóng râm</li><li>Ủi ở nhiệt độ thấp</li></ul></div>
+                </div>
+            </div>
+        </div>
+        <!-- Related Products -->
+        <div class="pd-related">
+            <h3 class="pd-related-title">Sản phẩm liên quan</h3>
+            <div class="pd-related-grid" id="pd-related-grid"></div>
+        </div>
+    </main>
+
+    <!-- IMAGE ZOOM -->
+    <div class="zoom-overlay" id="zoom-overlay">
+        <button class="zoom-close" id="zoom-close" aria-label="Đóng"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <img src="" alt="" id="zoom-img" class="zoom-img">
+    </div>
+
+    <!-- SIZE GUIDE -->
+    <div class="sg-overlay" id="sg-overlay"></div>
+    <div class="sg-modal" id="sg-modal">
+        <div class="sg-header"><h3>Hướng dẫn chọn size</h3><button class="sg-close" id="sg-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <div class="sg-body">
+            <table class="sg-table">
+                <thead><tr><th>Size</th><th>Cao (cm)</th><th>Nặng (kg)</th><th>Ngực (cm)</th><th>Eo (cm)</th></tr></thead>
+                <tbody>
+                    <tr><td>S</td><td>155-163</td><td>45-55</td><td>82-88</td><td>66-72</td></tr>
+                    <tr><td>M</td><td>163-170</td><td>55-65</td><td>88-94</td><td>72-78</td></tr>
+                    <tr><td>L</td><td>170-176</td><td>65-75</td><td>94-100</td><td>78-84</td></tr>
+                    <tr><td>XL</td><td>176-182</td><td>75-85</td><td>100-106</td><td>84-90</td></tr>
+                    <tr><td>XXL</td><td>182-188</td><td>85-95</td><td>106-112</td><td>90-96</td></tr>
+                </tbody>
+            </table>
+            <p class="sg-note">* Bảng size mang tính tham khảo.</p>
+        </div>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header"><h3>Giỏ hàng</h3><button class="cart-drawer-close" id="cart-drawer-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <div class="cart-drawer-body"><p class="cart-empty">Giỏ hàng trống</p></div>
+        <div class="cart-drawer-footer"><a href="#" class="cart-checkout-btn">Xem giỏ hàng</a><a href="checkout.html" class="cart-checkout-btn primary">Thanh toán</a></div>
+    </aside>
+
+    <script src="javascript/app.js"></script>
+    <script src="javascript/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán – HÙNG STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header scrolled" id="header">
+        <div class="header-inner">
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <a href="index.html" class="logo">HÙNG STORE</a>
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html">TRANG CHỦ</a></li>
+                    <li class="nav-item"><a href="index.html#section-ao">TOP (ÁO)</a></li>
+                    <li class="nav-item"><a href="index.html#section-quan">BOTTOMS (QUẦN)</a></li>
+                    <li class="nav-item"><a href="stores.html">CỬA HÀNG</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="action-btn cart-btn" id="cart-btn" aria-label="Giỏ hàng">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE SIDEBAR -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">HÙNG STORE</span><button class="sidebar-close" id="sidebar-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-item"><a href="index.html" class="sidebar-link">TRANG CHỦ</a></div>
+            <div class="sidebar-item"><a href="stores.html" class="sidebar-link">CỬA HÀNG</a></div>
+            <div class="sidebar-item"><a href="contact.html" class="sidebar-link">LIÊN HỆ</a></div>
+        </nav>
+    </aside>
+
+    <!-- CHECKOUT CONTENT -->
+    <main class="checkout-page">
+        <!-- Progress Steps -->
+        <div class="checkout-steps">
+            <div class="step active" data-step="1"><span class="step-num">1</span><span class="step-text">Giỏ hàng</span></div>
+            <div class="step-line"></div>
+            <div class="step" data-step="2"><span class="step-num">2</span><span class="step-text">Thông tin</span></div>
+            <div class="step-line"></div>
+            <div class="step" data-step="3"><span class="step-num">3</span><span class="step-text">Hoàn tất</span></div>
+        </div>
+
+        <div class="checkout-container">
+            <!-- LEFT: Cart / Form -->
+            <div class="checkout-left">
+                <!-- Step 1: Cart Review -->
+                <section class="checkout-section" id="step-1">
+                    <h2 class="checkout-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg> Giỏ hàng của bạn</h2>
+                    <div id="co-cart-items" class="co-cart-items">
+                        <!-- Rendered by JS -->
+                    </div>
+                    <div id="co-cart-empty" class="co-empty" style="display:none;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                        <p>Giỏ hàng trống</p>
+                        <a href="index.html" class="co-shop-btn">Tiếp tục mua sắm</a>
+                    </div>
+                    <div class="co-actions" id="co-step1-actions" style="display:none;">
+                        <a href="index.html" class="co-btn-outline">← Tiếp tục mua sắm</a>
+                        <button class="co-btn-primary" onclick="goToStep(2)">Tiếp tục →</button>
+                    </div>
+                </section>
+
+                <!-- Step 2: Customer Info -->
+                <section class="checkout-section" id="step-2" style="display:none;">
+                    <h2 class="checkout-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Thông tin giao hàng</h2>
+                    <form id="co-form" class="co-form">
+                        <div class="form-row">
+                            <div class="form-group"><label>Họ và tên *</label><input type="text" id="co-name" required placeholder="Nguyễn Văn A"></div>
+                            <div class="form-group"><label>Số điện thoại *</label><input type="tel" id="co-phone" required placeholder="0901 234 567"></div>
+                        </div>
+                        <div class="form-group"><label>Email</label><input type="email" id="co-email" placeholder="email@example.com"></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Tỉnh / Thành phố *</label>
+                                <select id="co-city" required>
+                                    <option value="">-- Chọn --</option>
+                                    <option value="hcm">TP. Hồ Chí Minh</option>
+                                    <option value="hn">Hà Nội</option>
+                                    <option value="dn">Đà Nẵng</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Quận / Huyện *</label>
+                                <input type="text" id="co-district" required placeholder="Quận 1">
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Địa chỉ chi tiết *</label><input type="text" id="co-address" required placeholder="Số nhà, tên đường..."></div>
+                        <div class="form-group"><label>Ghi chú</label><textarea id="co-note" rows="3" placeholder="Ghi chú cho đơn hàng (nếu có)..."></textarea></div>
+
+                        <h3 class="co-subtitle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Phương thức thanh toán</h3>
+                        <div class="co-payment-methods">
+                            <label class="co-payment-opt active">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <span class="co-radio"></span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                                <div><strong>COD</strong><span>Thanh toán khi nhận hàng</span></div>
+                            </label>
+                            <label class="co-payment-opt">
+                                <input type="radio" name="payment" value="bank">
+                                <span class="co-radio"></span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+                                <div><strong>Chuyển khoản</strong><span>Chuyển khoản ngân hàng</span></div>
+                            </label>
+                            <label class="co-payment-opt">
+                                <input type="radio" name="payment" value="momo">
+                                <span class="co-radio"></span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d82d8b" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="14" r="3"/></svg>
+                                <div><strong>Ví MoMo</strong><span>Thanh toán qua ví điện tử</span></div>
+                            </label>
+                        </div>
+                    </form>
+                    <div class="co-actions">
+                        <button class="co-btn-outline" onclick="goToStep(1)">← Quay lại</button>
+                        <button class="co-btn-primary" onclick="submitOrder()">Đặt hàng →</button>
+                    </div>
+                </section>
+
+                <!-- Step 3: Success -->
+                <section class="checkout-section" id="step-3" style="display:none;">
+                    <div class="co-success">
+                        <div class="co-success-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <h2>Đặt hàng thành công!</h2>
+                        <p>Cảm ơn bạn đã mua sắm tại <strong>Hùng Store</strong>.</p>
+                        <p class="co-order-id">Mã đơn hàng: <strong id="co-order-code">HS-000000</strong></p>
+                        <p class="co-success-note">Chúng tôi sẽ liên hệ xác nhận đơn hàng qua số điện thoại của bạn trong thời gian sớm nhất.</p>
+                        <div class="co-success-actions">
+                            <a href="index.html" class="co-btn-primary">Tiếp tục mua sắm</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT: Order Summary -->
+            <aside class="checkout-right" id="co-summary">
+                <div class="co-summary-card">
+                    <h3>Tóm tắt đơn hàng</h3>
+                    <div class="co-summary-items" id="co-summary-items"></div>
+                    <div class="co-summary-row"><span>Tạm tính</span><span id="co-subtotal">0₫</span></div>
+                    <div class="co-summary-row"><span>Phí vận chuyển</span><span id="co-shipping">0₫</span></div>
+                    <div class="co-summary-row co-discount-row" id="co-discount-row" style="display:none;"><span>Giảm giá</span><span id="co-discount-val">0₫</span></div>
+                    <div class="co-summary-divider"></div>
+                    <div class="co-summary-row co-total"><span>Tổng cộng</span><span id="co-total">0₫</span></div>
+                    <div class="co-coupon">
+                        <input type="text" placeholder="Nhập mã giảm giá..." id="co-coupon-input">
+                        <button onclick="applyCoupon()">Áp dụng</button>
+                    </div>
+                    <div class="co-guarantees">
+                        <div class="co-guarantee"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Miễn phí ship đơn từ 500K</div>
+                        <div class="co-guarantee"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Đổi trả trong 7 ngày</div>
+                        <div class="co-guarantee"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Bảo hành 6 tháng</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bottom"><p>Copyright &copy; 2026 <strong>HÙNG STORE</strong></p></div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header"><h3>Giỏ hàng</h3><button class="cart-drawer-close" id="cart-drawer-close" aria-label="Đóng"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <div class="cart-drawer-body"><p class="cart-empty">Giỏ hàng trống</p></div>
+        <div class="cart-drawer-footer"><a href="checkout.html" class="cart-checkout-btn primary">Thanh toán</a></div>
+    </aside>
+
+    <script src="javascript/app.js"></script>
+    <script>
+    // ===== CHECKOUT PAGE LOGIC =====
+    const coProductImg = 'https://cdn.hstatic.net/products/1000281824/god2_d1541690f3094eb5a9b8c0b80088b72a_compact.png';
+    let currentStep = 1;
+    let discount = 0;
+
+    function renderCheckoutCart() {
+        const items = JSON.parse(localStorage.getItem('hungstore_cart') || '[]');
+        const cartEl = document.getElementById('co-cart-items');
+        const emptyEl = document.getElementById('co-cart-empty');
+        const actionsEl = document.getElementById('co-step1-actions');
+
+        if (items.length === 0) {
+            cartEl.style.display = 'none';
+            emptyEl.style.display = 'flex';
+            actionsEl.style.display = 'none';
+            document.getElementById('co-summary').style.display = 'none';
+            return;
+        }
+
+        emptyEl.style.display = 'none';
+        cartEl.style.display = 'block';
+        actionsEl.style.display = 'flex';
+
+        // Group by name
+        const grouped = {};
+        items.forEach(it => {
+            if (grouped[it.name]) { grouped[it.name].qty++; }
+            else { grouped[it.name] = { ...it, qty: 1 }; }
+        });
+
+        cartEl.innerHTML = Object.values(grouped).map((item, i) => `
+            <div class="co-cart-item" style="animation-delay:${i*80}ms">
+                <img src="${coProductImg}" alt="" class="co-item-img">
+                <div class="co-item-info">
+                    <h4>${item.name}</h4>
+                    <p class="co-item-price">${formatPrice(item.price)}</p>
+                </div>
+                <div class="co-item-qty">
+                    <button onclick="changeQty('${item.name.replace(/'/g,"\\'")}', -1)">−</button>
+                    <span>${item.qty}</span>
+                    <button onclick="changeQty('${item.name.replace(/'/g,"\\'")}', 1)">+</button>
+                </div>
+                <p class="co-item-total">${formatPrice(item.price * item.qty)}</p>
+                <button class="co-item-remove" onclick="removeItem('${item.name.replace(/'/g,"\\'")}')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        `).join('');
+
+        updateSummary(items);
+    }
+
+    function updateSummary(items) {
+        const subtotal = items.reduce((s, it) => s + it.price, 0);
+        const shipping = subtotal >= 500000 ? 0 : 30000;
+        const total = subtotal - discount + shipping;
+
+        document.getElementById('co-subtotal').textContent = formatPrice(subtotal);
+        document.getElementById('co-shipping').textContent = shipping === 0 ? 'Miễn phí' : formatPrice(shipping);
+        document.getElementById('co-total').textContent = formatPrice(Math.max(0, total));
+
+        // Summary items
+        const grouped = {};
+        items.forEach(it => {
+            if (grouped[it.name]) grouped[it.name].qty++;
+            else grouped[it.name] = { ...it, qty: 1 };
+        });
+        document.getElementById('co-summary-items').innerHTML = Object.values(grouped).map(it => `
+            <div class="co-summary-item">
+                <span>${it.name.substring(0, 28)}... × ${it.qty}</span>
+                <span>${formatPrice(it.price * it.qty)}</span>
+            </div>
+        `).join('');
+    }
+
+    function changeQty(name, delta) {
+        let items = JSON.parse(localStorage.getItem('hungstore_cart') || '[]');
+        if (delta > 0) {
+            items.push({ name, price: items.find(i => i.name === name).price });
+        } else {
+            const idx = items.findIndex(i => i.name === name);
+            if (idx > -1) items.splice(idx, 1);
+        }
+        localStorage.setItem('hungstore_cart', JSON.stringify(items));
+        cartItems = items; updateCartUI(); renderCheckoutCart();
+    }
+
+    function removeItem(name) {
+        let items = JSON.parse(localStorage.getItem('hungstore_cart') || '[]');
+        items = items.filter(i => i.name !== name);
+        localStorage.setItem('hungstore_cart', JSON.stringify(items));
+        cartItems = items; updateCartUI(); renderCheckoutCart();
+    }
+
+    function applyCoupon() {
+        const code = document.getElementById('co-coupon-input').value.trim().toUpperCase();
+        const discRow = document.getElementById('co-discount-row');
+        if (code === 'HUNGSTORE10') {
+            const items = JSON.parse(localStorage.getItem('hungstore_cart') || '[]');
+            const subtotal = items.reduce((s, it) => s + it.price, 0);
+            discount = Math.round(subtotal * 0.1);
+            discRow.style.display = 'flex';
+            document.getElementById('co-discount-val').textContent = '-' + formatPrice(discount);
+            updateSummary(items);
+            showToast('Áp dụng mã giảm giá thành công! -10%');
+        } else if (code) {
+            showToast('Mã giảm giá không hợp lệ');
+        }
+    }
+
+    function goToStep(step) {
+        document.querySelectorAll('.checkout-section').forEach(s => s.style.display = 'none');
+        document.getElementById('step-' + step).style.display = 'block';
+        document.querySelectorAll('.step').forEach(s => {
+            const sn = parseInt(s.dataset.step);
+            s.classList.toggle('active', sn <= step);
+            s.classList.toggle('completed', sn < step);
+        });
+        document.querySelectorAll('.step-line').forEach((line, i) => {
+            line.classList.toggle('active', i + 1 < step);
+        });
+        currentStep = step;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function submitOrder() {
+        const name = document.getElementById('co-name').value.trim();
+        const phone = document.getElementById('co-phone').value.trim();
+        const city = document.getElementById('co-city').value;
+        const district = document.getElementById('co-district').value.trim();
+        const address = document.getElementById('co-address').value.trim();
+
+        if (!name || !phone || !city || !district || !address) {
+            showToast('Vui lòng điền đầy đủ thông tin bắt buộc (*)');
+            return;
+        }
+
+        const orderCode = 'HS-' + Date.now().toString().slice(-6);
+        document.getElementById('co-order-code').textContent = orderCode;
+
+        localStorage.removeItem('hungstore_cart');
+        cartItems = []; updateCartUI();
+
+        goToStep(3);
+        document.getElementById('co-summary').style.display = 'none';
+    }
+
+    // Payment method toggle
+    document.querySelectorAll('.co-payment-opt input').forEach(inp => {
+        inp.addEventListener('change', () => {
+            document.querySelectorAll('.co-payment-opt').forEach(o => o.classList.remove('active'));
+            inp.closest('.co-payment-opt').classList.add('active');
+        });
+    });
+
+    renderCheckoutCart();
+    </script>
+</body>
+</html>
